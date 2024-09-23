@@ -1,0 +1,28 @@
+Package: birdwhisper
+Title: Train Yourself to Recognize Bird Calls in an Area
+Version: 0.0.0.9000
+Authors@R: 
+    person("Sam", "Herniman", role = c("aut", "cre", "m"),
+           email = "sam_j_h@zohomail.com",
+           comment = c(ORCID = "0000-0001-7663-2897"))
+Description: Specify a location and this package will download bird calls for the area. It will then test you on those calls so you can recognize your local birds by sound.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    cli,
+    curl,
+    fs,
+    httr2,
+    purrr,
+    rgbif,
+    sf,
+    stats,
+    stringr,
+    tibble,
+    tibblify,
+    tidygeocoder
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
