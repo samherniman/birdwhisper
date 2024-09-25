@@ -9,11 +9,13 @@ Description: Specify a location and this package will download bird calls for th
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Imports: 
     cli,
     curl,
+    dplyr,
     fs,
+    glue,
     httr2,
     purrr,
     rgbif,
@@ -22,7 +24,9 @@ Imports:
     stringr,
     tibble,
     tibblify,
-    tidygeocoder
+    tidygeocoder,
+    tidyr,
+    tuneR
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

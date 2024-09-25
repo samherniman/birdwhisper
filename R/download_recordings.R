@@ -7,8 +7,8 @@
 #' @return list of xeno canto records
 #' @export
 #'
-#' @examples
 download_recordings <- function(x, save_directory, n_per_sp = 4) {
+  id <- sono_large <-  NULL
   x_filtered <- filter_recordings(x, n_per_sp = n_per_sp) |>
     dplyr::rowwise() |>
     dplyr::mutate(
@@ -19,9 +19,15 @@ download_recordings <- function(x, save_directory, n_per_sp = 4) {
 }
 
 
+#' Get the large vector from sono
+#'
+#' @param sono Sonogram vector in Xeno Canto record
+#'
+#' @return sono$large
 get_sono_large <- function(sono) {
   return(sono$large)
 }
+
 #' Filter the list of recordings for a species to a given number
 #'
 #' @param x species record from Xeno Canto
@@ -30,8 +36,8 @@ get_sono_large <- function(sono) {
 #' @return recording records
 #' @export
 #'
-#' @examples
 filter_recordings <- function(x, n_per_sp = 1) {
+  recordings <- lic <- also <- sono <- species <- NULL
   file_vec <-
     x |>
     tidyr::unnest_longer(col = recordings) |>
@@ -57,10 +63,9 @@ filter_recordings <- function(x, n_per_sp = 1) {
 #' @return local path to the recording
 #' @export
 #'
-#' @examples
 download_xeno <- function(x, save_directory) {
-  message("download_xeno has been depricated.
-          please use download_xeno_recording")
+  cli::cli_abort(c("download_xeno has been depricated.
+          please use download_xeno_recording"))
 #   fs::dir_create(save_directory)
 #   out_path <- fs::path(save_directory, x$id, ext = "mp3")
 #   curl::curl_download(x$file, destfile = out_path)
@@ -82,8 +87,6 @@ download_xeno <- function(x, save_directory) {
 #'
 #' @return the local location of the file
 #' @export
-#'
-#' @examples
 download_xeno_recording <- function(x_id, x_file, save_directory) {
   fs::dir_create(save_directory)
   out_path <- fs::path(save_directory, x_id, ext = "mp3")
@@ -100,8 +103,6 @@ download_xeno_recording <- function(x_id, x_file, save_directory) {
 #'
 #' @return the local location of the sonogram
 #' @export
-#'
-#' @examples
 download_xeno_sonogram <- function(x_id, x_sono_col, save_directory) {
   sono_path <- fs::path(save_directory, x_id, ext = "png")
   sono_url <- paste0("https:", x_sono_col)

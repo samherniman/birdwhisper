@@ -4,7 +4,7 @@
 \alias{download_recordings}
 \title{Download recordings from multiple species}
 \usage{
-download_recordings(x, save_directory, n_per_sp = 1)
+download_recordings(x, save_directory, n_per_sp = 4)
 }
 \arguments{
 \item{x}{list of responses from search_xeno_canto()}

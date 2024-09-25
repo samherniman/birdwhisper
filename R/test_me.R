@@ -19,7 +19,7 @@ test_me <- function(records_df, test_type = c(true_false, multiple_choice, free_
   min_num <- 1
   max_num <- 5
   while (keep_going != "1") {
-    rand_num <- runif(1, min = min_num, max = nrow(records_df)) |> round()
+    rand_num <- stats::runif(1, min = min_num, max = nrow(records_df)) |> round()
     secret_record <- records_df[rand_num,]
     play_recording(secret_record$recording_location)
     flashcard(secret_record)
@@ -38,16 +38,40 @@ test_me <- function(records_df, test_type = c(true_false, multiple_choice, free_
 
 }
 
+#' Test type: true or false
+#' @param secret_record a row from records_df
+#'
+#' @return invisible
+#' @export
+#'
+#' @examples
+#' \dontrun{true_false(records_df[1])}
 true_false <- function(secret_record) {
-
+  cli::cli_abort(c("Not implemented yet"))
 }
 
+#' Test type: multiple choice
+#' @param secret_record a row from records_df
+#'
+#' @return invisible
+#' @export
+#'
+#' @examples
+#' \dontrun{multiple_choice(records_df[1])}
 multiple_choice <- function(secret_record) {
-
+  cli::cli_abort(c("Not implemented yet"))
 }
 
+#' Test type: free choice
+#' @param secret_record a row from records_df
+#'
+#' @return invisible
+#' @export
+#'
+#' @examples
+#' \dontrun{free_choice(records_df[1])}
 free_choice <- function(secret_record) {
-
+  cli::cli_abort(c("Not implemented yet"))
 }
 
 #' Test type: flashcard
