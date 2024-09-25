@@ -4,6 +4,10 @@
 # birdwhisper <img src="man/figures/logo.png" align="right" height="139" alt="" />
 
 <!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![R-CMD-check](https://github.com/samherniman/birdwhisper/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/samherniman/birdwhisper/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## Test your knowledge of bird songs in any region
@@ -65,3 +69,10 @@ you the answer when you’re ready. Later, I’d like to add multiple choice
 tests and true/false tests.
 
 I hope this package encourages people to get outside!
+
+## Code of Conduct
+
+Please note that the birdwhisper project is released with a [Contributor
+Code of
+Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
